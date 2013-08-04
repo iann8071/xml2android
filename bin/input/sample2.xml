@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+	<databases>
+		<database name="db1">
+			<table name="t1">
+				<field name="date" type="TEXT" />
+				<field name="comment" type="TEXT" />
+			</table>
+		</database>
+		<database name="login_db">
+			<table name="login_t">
+				<field name="id" type="TEXT">
+					<authentication />
+				</field>
+				<field name="password" type="TEXT">
+					<authentication />
+				</field>
+				<field name="url" type="TEXT" />
+			</table>
+		</database>
+	</databases>
+	<pages>
+		<page name="dbsPage" entity="">
+			<first-page />
+			<button update-timing="once">
+				<button-text color="black">プロフィール</button-text>
+				<event type="click">
+					<action type="move" to="loginTPage1" />
+				</event>
+			</button>
+			<list entity="/all" update-timing="always">
+				<event type="click">
+					<action type="move" to="dbPage" take="/selected" />
+				</event>
+			</list>
+		</page>
+		<page name="dbPage" entity="/taken">
+			<list entity="/taken/all" update-timing="always">
+				<event type="click">
+					<action type="move" to="tPage1" take="/taken/selected" />
+				</event>
+			</list>
+		</page>
+		<page name="tPage1" entity="/taken">
+			<composite alignment="horizontal">
+				<button update-timing="once">
+					<button-text color="black">create</button-text>
+					<event type="click">
+						<action type="create" entity="/taken" />
+						<action type="move" to="tPage2" take="/taken/max" />
+					</event>
+				</button>
+				<button update-timing="once">
+					<button-text color="black">send</button-text>
+					<event type="click">
+						<action type="send" entity="/taken/all" to="/login_db/login_t/1/3">
+							<authentication entity="/login_db/login_t/1/1" />
+							<authentication entity="/login_db/login_t/1/2" />
+						</action>
+					</event>
+				</button>
+			</composite>
+			<list entity="/taken/all/1" update-timing="always">
+				<event type="click">
+					<action type="move" to="tPage2" take="/taken/selected" />
+				</event>
+			</list>
+		</page>
+		<page name="tPage2" entity="/taken">
+			<composite alignment="horizontal">
+				<button update-timing="once">
+					<event type="click">
+						<action type="update" entity="/taken/all" />
+						<action type="back" />
+					</event>
+					<button-text color="black">
+						update
+					</button-text>
+				</button>
+				<button update-timing="once">
+					<event type="click">
+						<action type="delete" entity="/taken/all" />
+						<action type="back" />
+					</event>
+					<button-text color="black">
+						delete
+					</button-text>
+				</button>
+			</composite>
+			<text color="green" size="30" entity="/taken/1/1" update-timing="once" />
+			<edit color="yellow" size="30" entity="/taken/1/2" target="value"
+				update-timing="always">
+			</edit>
+			<text color="green" size="30" entity="/taken/2/1" target="name"
+				update-timing="once" />
+			<edit color="yellow" size="30" entity="/taken/2/2" target="value"
+				update-timing="always">
+			</edit>
+		</page>
+		<page name="loginTPage1" entity="/login_db/login_t">
+			<composite alignment="horizontal">
+				<button update-timing="once">
+					<button-text color="black">create</button-text>
+					<event type="click">
+						<action type="create" entity="/login_db/login_t" />
+						<action type="move" to="loginTPage2" take="/login_db/login_t/max" />
+					</event>
+				</button>
+			</composite>
+			<list entity="/login_db/login_t/all/1" update-timing="always">
+				<event type="click">
+					<action type="move" to="loginTPage2" take="/login_db/login_t/selected" />
+				</event>
+			</list>
+		</page>
+		<page name="loginTPage2" entity="/taken">
+			<composite alignment="horizontal">
+				<button update-timing="once">
+					<event type="click">
+						<action type="update" entity="/taken/all" />
+						<action type="back" />
+					</event>
+					<button-text color="black">
+						登録
+					</button-text>
+				</button>
+				<button update-timing="once">
+					<event type="click">
+						<action type="delete" entity="/taken/all" />
+						<action type="back" />
+					</event>
+					<button-text color="black">
+						解除
+					</button-text>
+				</button>
+			</composite>
+			<text color="green" size="30" entity="/taken/1/1" update-timing="once" />
+			<edit color="yellow" size="30" entity="/taken/1/2" target="value"
+				update-timing="always">
+			</edit>
+			<text color="green" size="30" entity="/taken/2/1" target="name"
+				update-timing="once" />
+			<edit color="yellow" size="30" entity="/taken/2/2" target="value"
+				update-timing="always">
+			</edit>
+			<text color="green" size="30" entity="/taken/3/1" target="name"
+				update-timing="once" />
+			<edit color="yellow" size="30" entity="/taken/3/2" target="value"
+				update-timing="always">
+			</edit>
+		</page>
+	</pages>
+</application>

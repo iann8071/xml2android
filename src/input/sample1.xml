@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<databases>
+		<layout>
+			<listView />
+		</layout>
+		<database name="db1">
+			<layout>
+				<listView />
+			</layout>
+			<table name="t1">
+				<structure>
+					<field name="date" type="TEXT" />
+					<field name="comment" type="TEXT" />
+				</structure>
+				<index name="i1">
+					<layout>
+						<buttons>
+							<button action="create" text="create" />
+						</buttons>
+						<listView>
+							<item name="date" />
+						</listView>
+					</layout>
+					<record name="r1">
+						<layout>
+							<buttons>
+								<button action="update" text="update" />
+								<button action="delete" text="delete" />
+							</buttons>
+							<formView>
+								<item name="date" />
+								<item name="comment" />
+							</formView>
+						</layout>
+					</record>
+				</index>
+			</table>
+		</database>
+	</databases>
+</root>

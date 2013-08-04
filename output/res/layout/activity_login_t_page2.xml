@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_height="match_parent" android:layout_width="match_parent" tools:context=".LoginTPage2Activity">
+<Button android:id="@+id/button0" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="登録" android:textColor="#000000" android:textSize="sp"/>
+<Button android:id="@+id/button1" android:layout_height="wrap_content" android:layout_toRightOf="@+id/button0" android:layout_width="wrap_content" android:text="解除" android:textColor="#000000" android:textSize="sp"/>
+<TextView android:id="@+id/textView0" android:layout_below="@+id/button0" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="" android:textColor="#00FF00" android:textSize="30sp"/>
+<EditText android:id="@+id/editText0" android:layout_below="@+id/textView0" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="&#10;&#9;&#9;&#9;" android:textColor="#FFFF00" android:textSize="30sp"/>
+<TextView android:id="@+id/textView1" android:layout_below="@+id/editText0" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="" android:textColor="#00FF00" android:textSize="30sp"/>
+<EditText android:id="@+id/editText1" android:layout_below="@+id/textView1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="&#10;&#9;&#9;&#9;" android:textColor="#FFFF00" android:textSize="30sp"/>
+<TextView android:id="@+id/textView2" android:layout_below="@+id/editText1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="" android:textColor="#00FF00" android:textSize="30sp"/>
+<EditText android:id="@+id/editText2" android:layout_below="@+id/textView2" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="&#10;&#9;&#9;&#9;" android:textColor="#FFFF00" android:textSize="30sp"/>
+</RelativeLayout>

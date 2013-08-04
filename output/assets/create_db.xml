@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databases>
+		<database name="db1">
+			<table name="t1">
+				<field name="date" type="TEXT"/>
+				<field name="comment" type="TEXT"/>
+			</table>
+		</database>
+		<database name="login_db">
+			<table name="login_t">
+				<field name="id" type="TEXT">
+					<authentication/>
+				</field>
+				<field name="password" type="TEXT">
+					<authentication/>
+				</field>
+				<field name="url" type="TEXT"/>
+			</table>
+		</database>
+	</databases>
